@@ -11,6 +11,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -DLV_CONF_INCLUDE_SIMPLE=1 -DWINVER=0x
 set(CMAKE_EXE_LINKER_FLAGS "-mwindows -mconsole")
 
 add_subdirectory(lvgl)
+add_subdirectory(my_examples)
 
 include_directories(
         ${CMAKE_SOURCE_DIR}
@@ -26,4 +27,4 @@ set(SRCS
 add_executable(LittleGL ${SRCS})
 
 # The target "LittleGL" depends on LVGL
-target_link_libraries(LittleGL PRIVATE lvgl::lvgl lvgl::examples lvgl_demos)
+target_link_libraries(LittleGL PRIVATE lvgl::lvgl lvgl::examples lvgl_demos my_examples)
