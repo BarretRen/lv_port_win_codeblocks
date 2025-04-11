@@ -139,11 +139,11 @@ void hor_page_load_main(void)
     // lv_obj_set_style_img_opa(png, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     // lv_img_set_src(png, &food3);
 
-    LV_IMG_DECLARE(gif_001);
+    // LV_IMG_DECLARE(gif_001);
     lv_obj_t* ui_gif = lv_gif_create(screen1);
     lv_obj_set_pos(ui_gif, 40, 0);
-    // lv_gif_set_src(ui_gif, SYSTEM_RES_PATH "/png/test/001.gif");
-    lv_gif_set_src(ui_gif, &gif_001);
+    lv_gif_set_src(ui_gif, "D:../my_examples/resource/001.gif");
+    // lv_gif_set_src(ui_gif, &gif_001);
     // lv_obj_align(ui_gif, LV_ALIGN_CENTER, 0, 0);
 
     lv_obj_t* grad = lv_obj_create(screen1);
