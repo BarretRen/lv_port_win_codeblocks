@@ -122,6 +122,46 @@ static void scroll_begin_event(lv_event_t * e)
 
 void hor_page_load_main(void)
 {
+#if 1
+    lv_obj_t* screen1 = lv_obj_create(NULL);
+    lv_obj_set_size(screen1, LV_HOR_RES, LV_VER_RES);
+    lv_obj_set_style_pad_all(screen1,0,0);
+	lv_obj_set_style_border_width(screen1,0,0);
+    lv_obj_set_style_bg_color(screen1, lv_color_black(), LV_PART_MAIN);
+    lv_obj_set_style_radius(screen1, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    // lv_obj_t* png = lv_obj_create(screen1);
+    // lv_img_set_pivot(png, 50,50);
+	// lv_img_set_angle(png, 0);
+	// lv_obj_set_pos(png, 0, 0);
+	// lv_obj_set_size(png, 184, 316);
+	// lv_obj_add_flag(png, LV_OBJ_FLAG_CLICKABLE);
+    // lv_obj_set_style_img_opa(png, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    // lv_img_set_src(png, &food3);
+
+    LV_IMG_DECLARE(gif_001);
+    lv_obj_t* ui_gif = lv_gif_create(screen1);
+    lv_obj_set_pos(ui_gif, 40, 0);
+    // lv_gif_set_src(ui_gif, SYSTEM_RES_PATH "/png/test/001.gif");
+    lv_gif_set_src(ui_gif, &gif_001);
+    // lv_obj_align(ui_gif, LV_ALIGN_CENTER, 0, 0);
+
+    lv_obj_t* grad = lv_obj_create(screen1);
+    lv_obj_set_pos(grad, 0, 0);
+    lv_obj_set_size(grad, 40, 240);
+    static lv_style_t style;
+    lv_style_init(&style);
+    lv_style_set_radius(&style, 0);
+    lv_style_set_border_width(&style, 0);
+    lv_style_set_bg_opa(&style, LV_OPA_COVER);
+    lv_style_set_bg_grad_dir(&style, LV_GRAD_DIR_VER);
+    lv_style_set_bg_color(&style, lv_color_hex(0xFF0000));
+    lv_style_set_bg_grad_color(&style, lv_color_hex(0x0000FF));
+    lv_obj_add_style(grad, &style, LV_PART_MAIN);
+    lv_obj_move_background(grad);
+
+    lv_disp_load_scr(screen1);
+#else
     ui_tabview_screen = lv_obj_create(NULL);
     lv_obj_add_event_cb(ui_tabview_screen, ui_event_tabview_screen, LV_EVENT_ALL, NULL);
 
@@ -163,5 +203,6 @@ void hor_page_load_main(void)
     ui_UiPage5_screen_init(tab6);
 
     lv_disp_load_scr(ui_tabview_screen);
+#endif
 }
 

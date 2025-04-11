@@ -15,3 +15,11 @@ This requires the MinGW version of **CodeBlocks 20.03 or newer** to be installed
 5) Click on **Build and Run** or press **F9**. 
 6) If everything goes well, you should see your simulator running.  
 
+## build
+
+```bash
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" ..
+```

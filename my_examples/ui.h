@@ -178,6 +178,7 @@ LV_IMG_DECLARE(ui_img_anime_line1_png);    // assets\anime_line1.png
 LV_IMG_DECLARE(ui_img_arrow1_png);    // assets\arrow1.png
 LV_IMG_DECLARE(ui_img_cloud1_png);    // assets\cloud1.png
 LV_IMG_DECLARE(ui_img_common_switch1_png);    // assets\common_switch1.png
+LV_IMG_DECLARE(food3);
 
 LV_FONT_DECLARE(ui_font_Number);
 LV_FONT_DECLARE(ui_font_FontHei24);

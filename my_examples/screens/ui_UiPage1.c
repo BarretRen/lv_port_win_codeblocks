@@ -17,6 +17,7 @@ void ui_UiPage1_screen_init(lv_obj_t *parent)
     lv_obj_set_style_pad_all(ui_Screen1, 0, 0);
     lv_obj_set_style_radius(ui_Screen1, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+#if 0
     ui_sun = lv_img_create(ui_Screen1);
     lv_img_set_src(ui_sun, &ui_img_sun_png);
     lv_obj_set_width(ui_sun, LV_SIZE_CONTENT);   /// 1
@@ -27,14 +28,14 @@ void ui_UiPage1_screen_init(lv_obj_t *parent)
     lv_obj_clear_flag(ui_sun, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     ui_cloudBig = lv_img_create(ui_Screen1);
-    lv_img_set_src(ui_cloudBig, &ui_img_cloud_b_png);
+    lv_img_set_src(ui_cloudBig, &food3);
     lv_obj_set_width(ui_cloudBig, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_cloudBig, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_cloudBig, 250);
-    lv_obj_set_y(ui_cloudBig, 90);
+    lv_obj_set_x(ui_cloudBig, 0);
+    lv_obj_set_y(ui_cloudBig, 0);
     lv_obj_add_flag(ui_cloudBig, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_cloudBig, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-
+#else
     ui_cloudSmall2 = lv_img_create(ui_Screen1);
     lv_img_set_src(ui_cloudSmall2, &ui_img_cloud_s_png);
     lv_obj_set_width(ui_cloudSmall2, LV_SIZE_CONTENT);   /// 1
@@ -98,6 +99,6 @@ void ui_UiPage1_screen_init(lv_obj_t *parent)
     lv_obj_set_style_text_font(ui_dataInfo, &ui_font_FontHei24, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_Screen1, ui_event_Screen1, LV_EVENT_ALL, NULL);
-
+#endif
 }
 
